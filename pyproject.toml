@@ -1,0 +1,28 @@
+[project]
+name = "exercises"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "tehledred",email = "ledred21@gmail.com"}
+]
+readme = "README.md"
+requires-python = ">=3.13,<4.0"
+dependencies = [
+]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.3.5"
+radon = "5.1"
+
+[tool.pytest.ini_options]
+addopts = ["--import-mode=importlib", "-ra", "-q", "-p", "profiling"]
+pythonpath = "./src"
+testpaths = ["tests"]
+
+[tool.coverage.run]
+omit = ["tests/*"]
