@@ -26,3 +26,9 @@ testpaths = ["tests"]
 
 [tool.coverage.run]
 omit = ["tests/*"]
+
+[tool.mypy]
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = true
+mypy_path = ["src"]
