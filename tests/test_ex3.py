@@ -1,4 +1,12 @@
-from exercises.ex3 import isArmstrong__
+from pytest import raises
 
-def test_isArmstrong__():
-    assert isArmstrong__(9)
+from exercises.ex3 import isArmstrong
+
+
+def test_isArmstrong() -> None:
+    assert isArmstrong(9)
+
+
+def test_isArmstrongError() -> None:
+    with raises(ValueError, match="Input list cannot be empty"):
+        assert isArmstrong("")

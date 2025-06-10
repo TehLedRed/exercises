@@ -1,7 +1,7 @@
 import math
-from typing import Generator
 
-def isArmstrong__(x: list[int]) -> Generator[bool]:
+
+def isArmstrong(input: int) -> bool:
     """
     Check if a given list of integers are Armstrong numbers.
 
@@ -25,13 +25,10 @@ def isArmstrong__(x: list[int]) -> Generator[bool]:
     >>> list(isArmstrong__([1633, 8209, 9475, 54749]))
     [False, False, False, False]
     """
-    if not x:
-        return
-    for num in x:
-        k = math.floor(math.log(num, 10) + 1)
-        digits = [int(digit) for digit in str(num)]
+    if not input or not isinstance(input, int):
+        raise ValueError("Input list cannot be empty")
 
-        yield num == sum([digit ** k for digit in digits])
+    k = math.floor(math.log(input, 10) + 1)
+    digits = [int(digit) for digit in str(input)]
 
-
-print(list(isArmstrong__(['153'])))
+    return input == sum([digit**k for digit in digits])
