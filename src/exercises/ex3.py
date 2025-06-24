@@ -1,6 +1,5 @@
 import math
 
-
 def isArmstrong(input: int) -> bool:
     """
     Check if a given list of integers are Armstrong numbers.

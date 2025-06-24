@@ -1,9 +1,14 @@
 {
   "editor.formatOnSave": true,
-  "python.testing.pytestArgs": ["-vv", "tests"],
+  "python.testing.pytestArgs": [
+    "-vv",
+    "tests"
+  ],
   "python.testing.unittestEnabled": false,
   "python.testing.pytestEnabled": true,
-  "python.analysis.extraPaths": ["./src"],
+  "python.analysis.extraPaths": [
+    "./src"
+  ],
   "python.analysis.indexing": true,
   "python.analysis.autoImportCompletions": true,
   "python.analysis.autoSearchPaths": true,
@@ -22,11 +27,15 @@
       "source.organizeImports": "explicit"
     }
   },
-  "isort.args": ["--profile", "black"],
+  "isort.args": [
+    "--profile",
+    "black"
+  ],
   "ruff.organizeImports": false,
   "notebook.formatOnSave.enabled": true,
   "notebook.codeActionsOnSave": {
     "notebook.source.fixAll": "explicit",
     "notebook.source.organizeImports": "explicit"
-  }
+  },
+  "r.lsp.promptToInstall": false
 }
