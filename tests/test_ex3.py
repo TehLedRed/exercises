@@ -12,8 +12,8 @@ def test_isArmstrong_false() -> None:
 
 
 def test_isArmstrongError() -> None:
-    with raises(ValueError, match="Input list cannot be empty"):
-        assert isArmstrong("")
+    with raises(ValueError, match="Input cannot be negative"):
+        isArmstrong(-1)
 
 
 def test_isArmstrong_list_comprehension() -> None:
@@ -21,4 +21,6 @@ def test_isArmstrong_list_comprehension() -> None:
 
 
 def test_isArmstrong_list_comprehension_filter() -> None:
-    assert [371, 372, 408] == [value + 1 for value in [10, 370, 371, 407] if isArmstrong(value)]
+    assert [371, 372, 408] == [
+        value + 1 for value in [10, 370, 371, 407] if isArmstrong(value)
+    ]

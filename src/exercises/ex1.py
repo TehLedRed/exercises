@@ -1,4 +1,4 @@
-import re
+from re import sub
 from typing import LiteralString
 
 
@@ -13,7 +13,7 @@ def encrypt(text: chr, size: int = 5) -> LiteralString:
     alphabet = [chr(i) for i in range(ord("a"), ord("z") + 1)]
     cipherMap = {ch: cipher[i] for i, ch in enumerate(alphabet)}
 
-    text = re.sub(r"[^\w]", "", text.lower())
+    text = sub(r"[^\w]", "", text.lower())
     coded = "".join(cipherMap.get(chr, chr) for chr in text)
 
     return " ".join([coded[i : i + size] for i in range(0, len(coded), size)])
