@@ -1,6 +1,6 @@
 from pytest import raises
 
-from exercises.ex5 import binarySearch
+from exercises.binarySearch import binarySearch
 
 
 def test_binarySearch_1() -> None:

@@ -1,4 +1,4 @@
-from exercises.id1 import sum_multiplier_v1, sum_multiplier_v2
+from exercises.multiplier import sum_multiplier_v1, sum_multiplier_v2
 
 
 def test1_sum_multiplier_v1() -> None:

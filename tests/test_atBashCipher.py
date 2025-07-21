@@ -1,4 +1,4 @@
-from exercises.ex1 import encrypt
+from exercises.atBashCipher import encrypt
 
 
 def test_encrypt() -> None:

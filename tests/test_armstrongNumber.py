@@ -1,6 +1,6 @@
 from pytest import raises
 
-from exercises.ex3 import isArmstrong
+from exercises.armstrongNumber import isArmstrong
 
 
 def test_isArmstrong() -> None:
