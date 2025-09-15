@@ -30,15 +30,19 @@ class rationalNumber(object):
             self.numerator = -self.numerator
             self.denominator = -self.denominator
 
-    def __eq__(self, other: Any) -> bool:
+    def __eq__(
+        self,
+        other: Any,
+    ) -> bool:
         if not isinstance(other, rationalNumber):
-            return False
+            raise ValueError("Can only compare with another rationalNumber instance.")
+
         return (
             self.numerator == other.numerator and self.denominator == other.denominator
         )
 
     def __repr__(self) -> str:
-        return f"{self.numerator}/{self.denominator}"
+        return f"rationalNumber({self.numerator}/{self.denominator})"
 
     def __abs__(self) -> rationalNumber:
         return rationalNumber(abs(self.numerator), abs(self.denominator))
@@ -96,5 +100,19 @@ class rationalNumber(object):
 
         return rationalNumber(new_numerator, new_denominator)
 
-    def __rpow__(self, power: float) -> float:
-        return float(self.numerator**power) / float(self.denominator**power)
+    def __rpow__(
+        self,
+        power: float,
+    ) -> float:
+        """
+        Exponentiation of a real number x to a rational number
+        r = a/b is x^(a/b) = root(x^a, b),
+        where root(p, q) is the qth root of p
+
+        Args:
+            power (float): _description_
+
+        Returns:
+            float: _description_
+        """
+        return float((power ** self.numerator) ** (1 / self.denominator))
